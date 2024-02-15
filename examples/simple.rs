@@ -67,9 +67,15 @@ async fn main() {
             .await
             .expect("Error while getting light");
         // now change the state to the negative of the old state (`!light.state.on`)
-        hue.set_light_state(&light_number, StateChange::new().on(!light.state.on))
-            .await
-            .expect("Error while switching light state");
+        hue.set_light_state(
+            &light_number,
+            StateChange::new()
+                .on(!light.state.on)
+                .bri(254)
+                .transition_time(30),
+        )
+        .await
+        .expect("Error while switching light state");
     } else {
         println!(
             "You can set the HUE_SWITCH_LIGHT_NUMBER enviroment to switch the state of the light."

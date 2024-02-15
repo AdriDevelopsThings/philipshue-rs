@@ -60,6 +60,8 @@ pub struct StateChange {
     value_bri: Option<u8>,
     #[serde(rename = "hue", skip_serializing_if = "Option::is_none")]
     value_hue: Option<u16>,
+    #[serde(rename = "transitiontime", skip_serializing_if = "Option::is_none")]
+    value_transition_time: Option<u16>,
 }
 
 impl StateChange {
@@ -84,6 +86,11 @@ impl StateChange {
 
     pub fn hue(mut self, hue: u16) -> Self {
         self.value_hue = Some(hue);
+        self
+    }
+
+    pub fn transition_time(mut self, transition_time: u16) -> Self {
+        self.value_transition_time = Some(transition_time);
         self
     }
 }
