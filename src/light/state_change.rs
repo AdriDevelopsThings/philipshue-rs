@@ -5,13 +5,18 @@ use crate::{error::HueError, Hue};
 impl Hue {
     /// Change the state of a light
     /// ```
-    /// let hue = Hue::new(HueBridge::new("url"), "username");
-    /// hue.set_light_state(
-    ///     1, // we know the light number from the lights request for example
-    ///     StateChange::new()
-    ///         .on(true) // turn the light on
-    ///         .bri(254) // this is the maximal brightness
-    /// ).await.unwrap();
+    /// use philipshue::{Hue, HueBridge, light::StateChange};
+    ///
+    /// #[tokio::main]
+    /// async fn main() {
+    ///     let hue = Hue::new(HueBridge::new("url".to_string()), "username".to_string());
+    ///     hue.set_light_state(
+    ///         "1", // we know the light number from the lights request for example
+    ///         StateChange::new()
+    ///             .on(true) // turn the light on
+    ///             .bri(254) // this is the maximal brightness
+    ///     ).await.unwrap();
+    /// }
     /// ```
     pub async fn set_light_state(
         &self,
@@ -37,6 +42,8 @@ impl Hue {
 
 /// Build `StateChange` objects to change the state of a `HueLight`
 /// ```
+/// use philipshue::light::StateChange;
+///
 /// let change = StateChange::new()
 ///     .on(true) // turn the light on
 ///     .bri(254) // set the brightness to 254 (maximum)

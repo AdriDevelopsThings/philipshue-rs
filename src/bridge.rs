@@ -9,7 +9,9 @@ use crate::{
 /// The `HueBridge` struct identifes a hue bridge (without `username` or authorization)
 /// If you know the bridge url just create the struct like this
 /// ```
-/// let bridge = HueBridge::new("https://philips-hue.local");
+/// use philipshue::HueBridge;
+///
+/// let bridge = HueBridge::new("https://philips-hue.local".to_string());
 /// ```
 #[derive(Clone)]
 pub struct HueBridge {

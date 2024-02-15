@@ -2,7 +2,9 @@ use serde::Serialize;
 
 /// It's necessary to use the `DeviceType` object to identify you. Just create one with any string.
 /// ```
-/// let device_type = DeviceType::new("my_device_name");
+/// use philipshue::DeviceType;
+///
+/// let device_type = DeviceType::new("my_device_name".to_string());
 /// ```
 #[derive(Serialize)]
 pub struct DeviceType {

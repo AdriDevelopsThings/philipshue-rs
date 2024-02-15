@@ -5,6 +5,9 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+doctest = false
+
 [dependencies]
 async-trait = "0"
 reqwest = { version = "0", default-features = false, features = ["json", "rustls-tls"] } # rustls-tls is required because we need to allow invalid certificates

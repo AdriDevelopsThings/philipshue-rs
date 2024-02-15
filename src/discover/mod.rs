@@ -7,6 +7,8 @@ pub use discovery_url::DiscoveryUrl;
 /// This struct identifies a discovered hue bridge.
 /// You can convert this struct easly to a `HueBridge`:
 /// ```
+/// use philipshue::{HueBridge, DiscoveredHueBridge};
+///
 /// let discovered_hue_bridge = DiscoveredHueBridge {
 ///     id: "id".to_string(),
 ///     url: "url".to_string()

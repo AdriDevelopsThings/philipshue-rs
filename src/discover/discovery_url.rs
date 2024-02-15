@@ -27,7 +27,12 @@ impl From<DiscoveryUrlRespones> for DiscoveredHueBridge {
 /// Discover a hue bridge using the `https://discovery.meethue.com` url.
 /// CAUTION: This url has an rate limit. So run this discovery just one time and save the `bridge_url` of `HueBridge`.
 /// ```
-/// let discovered_hue_bridges: Vec<DiscoveredHueBridge> = DiscoveryUrl::discover().await.unwrap();
+/// use philipshue::{DiscoveredHueBridge, DiscoveryUrl, Discover};
+///
+/// #[tokio::main]
+/// async fn main() {
+///     let discovered_hue_bridges: Vec<DiscoveredHueBridge> = DiscoveryUrl::discover().await.unwrap();
+/// }
 /// ```
 pub struct DiscoveryUrl;
 
