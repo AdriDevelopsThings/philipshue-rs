@@ -57,3 +57,14 @@ hue.set_light_state(light_number, StateChange::new().on(true)).await.unwrap(); /
 ```
 
 It's also possible to change the brightness, saturation and hue of the light by using the `StateChange` builder.
+
+# License
+Licensed under either of
+
+ * Apache License, Version 2.0
+   ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+ * MIT license
+   ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+
+
+at your option.
