@@ -13,7 +13,7 @@ use crate::{
 ///
 /// let bridge = HueBridge::new("https://philips-hue.local".to_string());
 /// ```
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct HueBridge {
     pub bridge_url: String,
 }

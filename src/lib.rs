@@ -13,6 +13,7 @@ pub use discover::*;
 pub use error::*;
 
 /// An authenticated `Hue` api object
+#[derive(Clone, Debug)]
 pub struct Hue {
     pub bridge: HueBridge,
     /// The username is something like an authorization token
