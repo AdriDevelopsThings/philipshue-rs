@@ -27,7 +27,7 @@ pub struct HueLightState {
     pub on: bool,
     pub bri: u8,
     pub hue: Option<u16>,
-    pub sat: Option<u16>,
+    pub sat: Option<u8>,
     pub ct: Option<u16>,
     pub alert: String,
     pub colormode: Option<String>,

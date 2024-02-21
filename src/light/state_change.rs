@@ -55,7 +55,7 @@ pub struct StateChange {
     #[serde(rename = "on", skip_serializing_if = "Option::is_none")]
     value_on: Option<bool>,
     #[serde(rename = "sat", skip_serializing_if = "Option::is_none")]
-    value_sat: Option<u16>,
+    value_sat: Option<u8>,
     #[serde(rename = "bri", skip_serializing_if = "Option::is_none")]
     value_bri: Option<u8>,
     #[serde(rename = "hue", skip_serializing_if = "Option::is_none")]
@@ -74,7 +74,7 @@ impl StateChange {
         self
     }
 
-    pub fn sat(mut self, sat: u16) -> Self {
+    pub fn sat(mut self, sat: u8) -> Self {
         self.value_sat = Some(sat);
         self
     }
