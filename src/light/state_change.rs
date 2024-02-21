@@ -69,6 +69,15 @@ impl StateChange {
         Self::default()
     }
 
+    /// Returns `true` if no value was set (every value is `None`)
+    pub fn is_empty(&self) -> bool {
+        self.value_on.is_none()
+            && self.value_sat.is_none()
+            && self.value_bri.is_none()
+            && self.value_hue.is_none()
+            && self.value_transition_time.is_none()
+    }
+
     pub fn on(mut self, on: bool) -> Self {
         self.value_on = Some(on);
         self
