@@ -2,6 +2,8 @@ use std::collections::HashMap;
 
 use crate::{error::HueError, Hue};
 
+#[cfg(feature = "display")]
+mod display;
 mod model;
 mod state_change;
 
