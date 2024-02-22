@@ -50,7 +50,7 @@ impl Hue {
 ///     .sat(123) // set the saturation to 123
 ///     .hue(123); // set the hue to 123
 /// ```
-#[derive(Default, Serialize)]
+#[derive(Default, Clone, Serialize)]
 pub struct StateChange {
     #[serde(rename = "on", skip_serializing_if = "Option::is_none")]
     value_on: Option<bool>,
