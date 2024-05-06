@@ -53,7 +53,9 @@ impl fmt::Display for HueLightConfig {
 impl fmt::Display for HueLightState {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         writeln!(f, "On: {}", self.on)?;
-        writeln!(f, "Brightness: {}", self.bri)?;
+        if let Some(bri) = self.bri {
+            writeln!(f, "Brightness: {}", bri)?;
+        }
         if let Some(hue) = self.hue {
             writeln!(f, "Hue: {}", hue)?;
         }
