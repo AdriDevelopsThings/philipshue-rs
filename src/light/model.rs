@@ -25,7 +25,7 @@ pub struct HueLight {
 #[derive(Deserialize)]
 pub struct HueLightState {
     pub on: bool,
-    pub bri: u8,
+    pub bri: Option<u8>,
     pub hue: Option<u16>,
     pub sat: Option<u8>,
     pub ct: Option<u16>,
